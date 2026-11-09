@@ -1,0 +1,9 @@
+# Needs Python 3.11 or later (tested with 3.13).
+# MLflow and scikit-learn are pinned: the screenshots come from MLflow 3.18,
+# and a saved model must be loaded with the same scikit-learn version.
+mlflow==3.18.*
+scikit-learn==1.9.*
+pandas>=2.2
+pyarrow>=14
+matplotlib>=3.8
+jupyter
