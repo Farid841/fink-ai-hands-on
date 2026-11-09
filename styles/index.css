@@ -1,0 +1,142 @@
+:root {
+  --fink-navy: #15284f;
+  --fink-orange: #f5622e;
+  --fink-light: #eef1f8;
+  --fink-orange-light: #fdebe4;
+}
+
+.slidev-layout {
+  color: #1f2a44;
+}
+
+/* Titles: navy with an orange underline */
+.slidev-layout h1 {
+  color: var(--fink-navy);
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+.slidev-layout.default h1::after,
+.slidev-layout.two-cols h1::after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 5px;
+  margin-top: 8px;
+  border-radius: 3px;
+  background: var(--fink-orange);
+}
+.slidev-layout strong { color: var(--fink-navy); }
+.slidev-layout li::marker { color: var(--fink-orange); }
+
+/* Default slides: light navy band at the top */
+.slidev-layout.default {
+  background:
+    linear-gradient(var(--fink-navy), var(--fink-navy)) top / 100% 6px no-repeat,
+    #ffffff;
+}
+
+/* Cover */
+.slidev-layout.cover {
+  background:
+    linear-gradient(90deg, #ffffff 0%, #ffffff 48%, rgba(255,255,255,0) 72%),
+    url(/img/background.png) right -80px center / 60% auto no-repeat,
+    linear-gradient(135deg, #ffffff 0%, #ffffff 55%, var(--fink-orange-light) 100%);
+  text-align: left !important;
+}
+.slidev-layout.cover h1 { font-size: 3.2rem; line-height: 1.1; }
+
+/* Section dividers: navy background with Fink orange particles */
+.slidev-layout.section {
+  background:
+    url(/img/background.png) right -40px bottom -40px / 70% auto no-repeat,
+    radial-gradient(circle at 15% 20%, #22396b 0%, var(--fink-navy) 60%);
+  color: #ffffff;
+}
+.slidev-layout.section h1 {
+  color: #ffffff;
+  font-size: 3rem;
+}
+.slidev-layout.section h1::before {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 6px;
+  border-radius: 3px;
+  margin-bottom: 18px;
+  background: var(--fink-orange);
+}
+
+/* Centered statement slides */
+.slidev-layout.center {
+  background:
+    url(/img/background.png) left -220px bottom -140px / 45% auto no-repeat,
+    linear-gradient(180deg, #ffffff 0%, var(--fink-light) 100%);
+}
+
+/* Cards */
+.card {
+  background: var(--fink-light);
+  border-left: 5px solid var(--fink-navy);
+  border-radius: 10px;
+  padding: 14px 18px;
+}
+.card.orange {
+  background: var(--fink-orange-light);
+  border-left-color: var(--fink-orange);
+}
+.card h3 { color: var(--fink-navy); font-weight: 700; margin-bottom: 6px; }
+
+.pill {
+  display: inline-block;
+  padding: 2px 12px;
+  border-radius: 999px;
+  background: var(--fink-orange);
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* Tables */
+.slidev-layout table { font-size: 0.85em; }
+.slidev-layout thead th {
+  background: var(--fink-navy);
+  color: #ffffff;
+}
+.slidev-layout tbody tr:nth-child(even) { background: var(--fink-light); }
+
+/* Class icons */
+.icon-grid img {
+  height: 70px;
+  margin: 0 auto 6px;
+  border-radius: 12px;
+}
+
+/* Small pipelines: step -> step -> output */
+.flow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin: 10px 0 14px;
+}
+.flow span {
+  background: #ffffff;
+  border: 2px solid var(--fink-navy);
+  color: var(--fink-navy);
+  border-radius: 999px;
+  padding: 2px 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.flow span:not(:last-child)::after {
+  content: "→";
+  margin-left: 12px;
+  margin-right: -4px;
+  color: var(--fink-orange);
+}
+.flow span.out {
+  background: var(--fink-orange);
+  border-color: var(--fink-orange);
+  color: #ffffff;
+}
